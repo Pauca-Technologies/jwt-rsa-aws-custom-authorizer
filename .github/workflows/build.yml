@@ -7,6 +7,9 @@ on:
       - main
   workflow_dispatch: 
 
+env:
+  S3_BUCKET: 'operfinance-deploys'
+
 jobs:
   # Wait for up to a minute for previous run to complete, abort if not done by then
   pre-build:
@@ -51,7 +54,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: 'us-east-1'
-          aws-bucket: ${{ secrets.AWS_BUCKET }}
+          aws-bucket: ${{ env.AWS_BUCKET }}
           file-path: './custom-authorizer.zip'
           output-qr-url: 'true' 
 
