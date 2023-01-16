@@ -46,7 +46,6 @@ jobs:
 
       - name: Build
         run: npm run bundle
-          output-qr-url: 'true' 
 
       - name: Show URL
         run: echo '${{ env.S3_BUCKET }}' 
