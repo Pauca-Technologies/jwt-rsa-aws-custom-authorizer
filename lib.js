@@ -61,7 +61,7 @@ module.exports.authenticate = (params) => {
             console.log('Claims: ', claims)
             return {
                 principalId: decoded.sub,
-                policyDocument: getPolicyDocument('Allow', params.methodArn),
+                policyDocument: getPolicyDocument('Allow', '*'),
                 context: { 
                     scope: decoded.scope,
                     'organization-name': claims.organization,
