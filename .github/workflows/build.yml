@@ -59,7 +59,5 @@ jobs:
           aws-region: 'us-east-1'
           aws-bucket: ${{ env.S3_BUCKET }}
           file-path: './custom-authorizer.zip'
-          output-qr-url: 'true' 
-
-      - name: Show URL
-        run: echo '${{ steps.upload.outputs.qr-url }}' # use this output
+          bucket-root: /
+          destination-dir: /
